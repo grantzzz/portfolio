@@ -1,0 +1,574 @@
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent; }
+
+article, aside, figure, footer, header, nav, section, details, summary {
+  display: block; }
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit; }
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects
+*/
+img,
+object,
+embed {
+  max-width: 100%; }
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	 In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+}
+*/
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll; }
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help; }
+
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+th {
+  font-weight: bold;
+  vertical-align: bottom; }
+
+td {
+  font-weight: normal;
+  vertical-align: top; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */ }
+
+input[type="radio"] {
+  vertical-align: text-bottom; }
+
+input[type="checkbox"] {
+  vertical-align: bottom; }
+
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline; }
+
+.ie6 input {
+  vertical-align: text-bottom; }
+
+select, input, textarea {
+  font: 99% sans-serif; }
+
+table {
+  font-size: inherit;
+  font: 100%; }
+
+small {
+  font-size: 85%; }
+
+strong {
+  font-weight: bold; }
+
+td, td img {
+  vertical-align: top; }
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif; }
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {
+  margin: 0; }
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {
+  width: auto;
+  overflow: visible; }
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+  -ms-interpolation-mode: bicubic; }
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+/* let's clear some floats */
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+@-webkit-keyframes a {
+  0% {
+    -webkit-clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 0 100%); }
+  20% {
+    -webkit-clip-path: polygon(0 0, 27% 24%, 40% 66%, 100% 50%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 27% 24%, 40% 66%, 100% 50%, 100% 100%, 0 100%); }
+  40% {
+    -webkit-clip-path: polygon(0 16%, 19% 54%, 24% 89%, 64% 67%, 100% 100%, 0 100%);
+    clip-path: polygon(0 16%, 19% 54%, 24% 89%, 64% 67%, 100% 100%, 0 100%); }
+  60% {
+    -webkit-clip-path: polygon(0 47%, 9% 70%, 14% 100%, 44% 89%, 89% 100%, 0 100%);
+    clip-path: polygon(0 47%, 9% 70%, 14% 100%, 44% 89%, 89% 100%, 0 100%); }
+  80% {
+    -webkit-clip-path: polygon(0 61%, 6% 89%, 10% 100%, 27% 95%, 87% 100%, 0 100%);
+    clip-path: polygon(0 61%, 6% 89%, 10% 100%, 27% 95%, 87% 100%, 0 100%); }
+  to {
+    -webkit-clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%);
+    clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%); } }
+
+@keyframes a {
+  0% {
+    -webkit-clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 0 100%); }
+  20% {
+    -webkit-clip-path: polygon(0 0, 27% 24%, 40% 66%, 100% 50%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 27% 24%, 40% 66%, 100% 50%, 100% 100%, 0 100%); }
+  40% {
+    -webkit-clip-path: polygon(0 16%, 19% 54%, 24% 89%, 64% 67%, 100% 100%, 0 100%);
+    clip-path: polygon(0 16%, 19% 54%, 24% 89%, 64% 67%, 100% 100%, 0 100%); }
+  60% {
+    -webkit-clip-path: polygon(0 47%, 9% 70%, 14% 100%, 44% 89%, 89% 100%, 0 100%);
+    clip-path: polygon(0 47%, 9% 70%, 14% 100%, 44% 89%, 89% 100%, 0 100%); }
+  80% {
+    -webkit-clip-path: polygon(0 61%, 6% 89%, 10% 100%, 27% 95%, 87% 100%, 0 100%);
+    clip-path: polygon(0 61%, 6% 89%, 10% 100%, 27% 95%, 87% 100%, 0 100%); }
+  to {
+    -webkit-clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%);
+    clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%); } }
+
+@-webkit-keyframes b {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 50%); }
+  20% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 64% 86%, 0 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 64% 86%, 0 100%, 0 50%); }
+  40% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 81%, 74% 71%, 19% 89%, 13% 44%);
+    clip-path: polygon(0 0, 100% 0, 100% 81%, 74% 71%, 19% 89%, 13% 44%); }
+  60% {
+    -webkit-clip-path: polygon(21% 0, 100% 0, 100% 58%, 84% 54%, 39% 74%, 40% 29%);
+    clip-path: polygon(21% 0, 100% 0, 100% 58%, 84% 54%, 39% 74%, 40% 29%); }
+  80% {
+    -webkit-clip-path: polygon(46% 0, 100% 0, 100% 31%, 94% 21%, 63% 37%, 62% 8%);
+    clip-path: polygon(46% 0, 100% 0, 100% 31%, 94% 21%, 63% 37%, 62% 8%); }
+  to {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0, 100% 0, 100% 0);
+    clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0, 100% 0, 100% 0); } }
+
+@keyframes b {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 100%, 0 50%); }
+  20% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 64% 86%, 0 100%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 64% 86%, 0 100%, 0 50%); }
+  40% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 81%, 74% 71%, 19% 89%, 13% 44%);
+    clip-path: polygon(0 0, 100% 0, 100% 81%, 74% 71%, 19% 89%, 13% 44%); }
+  60% {
+    -webkit-clip-path: polygon(21% 0, 100% 0, 100% 58%, 84% 54%, 39% 74%, 40% 29%);
+    clip-path: polygon(21% 0, 100% 0, 100% 58%, 84% 54%, 39% 74%, 40% 29%); }
+  80% {
+    -webkit-clip-path: polygon(46% 0, 100% 0, 100% 31%, 94% 21%, 63% 37%, 62% 8%);
+    clip-path: polygon(46% 0, 100% 0, 100% 31%, 94% 21%, 63% 37%, 62% 8%); }
+  to {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0, 100% 0, 100% 0);
+    clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0, 100% 0, 100% 0); } }
+
+@-webkit-keyframes c {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%); }
+  20% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 11% 51%);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 11% 51%); }
+  40% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 92% 40%, 87% 83%, 44% 79%, 19% 36%);
+    clip-path: polygon(0 0, 100% 0, 92% 40%, 87% 83%, 44% 79%, 19% 36%); }
+  60% {
+    -webkit-clip-path: polygon(20% 0, 100% 0, 67% 13%, 70% 50%, 41% 69%, 30% 23%);
+    clip-path: polygon(20% 0, 100% 0, 67% 13%, 70% 50%, 41% 69%, 30% 23%); }
+  80% {
+    -webkit-clip-path: polygon(31% 0, 71% 0, 57% 9%, 54% 30%, 41% 50%, 36% 16%);
+    clip-path: polygon(31% 0, 71% 0, 57% 9%, 54% 30%, 41% 50%, 36% 16%); }
+  to {
+    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 0, 50% 0, 50% 0, 50% 0);
+    clip-path: polygon(50% 0, 50% 0, 50% 0, 50% 0, 50% 0, 50% 0); } }
+
+@keyframes c {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%); }
+  20% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 11% 51%);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 11% 51%); }
+  40% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 92% 40%, 87% 83%, 44% 79%, 19% 36%);
+    clip-path: polygon(0 0, 100% 0, 92% 40%, 87% 83%, 44% 79%, 19% 36%); }
+  60% {
+    -webkit-clip-path: polygon(20% 0, 100% 0, 67% 13%, 70% 50%, 41% 69%, 30% 23%);
+    clip-path: polygon(20% 0, 100% 0, 67% 13%, 70% 50%, 41% 69%, 30% 23%); }
+  80% {
+    -webkit-clip-path: polygon(31% 0, 71% 0, 57% 9%, 54% 30%, 41% 50%, 36% 16%);
+    clip-path: polygon(31% 0, 71% 0, 57% 9%, 54% 30%, 41% 50%, 36% 16%); }
+  to {
+    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 0, 50% 0, 50% 0, 50% 0);
+    clip-path: polygon(50% 0, 50% 0, 50% 0, 50% 0, 50% 0, 50% 0); } }
+
+@-webkit-keyframes d {
+  0% {
+    -webkit-clip-path: polygon(99% 0, 100% 50%, 100% 100%, 0 100%, 0 50%, 0 0);
+    clip-path: polygon(99% 0, 100% 50%, 100% 100%, 0 100%, 0 50%, 0 0); }
+  20% {
+    -webkit-clip-path: polygon(88% 0, 100% 50%, 100% 100%, 0 100%, 0 50%, 29% 6%);
+    clip-path: polygon(88% 0, 100% 50%, 100% 100%, 0 100%, 0 50%, 29% 6%); }
+  40% {
+    -webkit-clip-path: polygon(62% 9%, 75% 48%, 100% 100%, 0 100%, 36% 55%, 43% 24%);
+    clip-path: polygon(62% 9%, 75% 48%, 100% 100%, 0 100%, 36% 55%, 43% 24%); }
+  60% {
+    -webkit-clip-path: polygon(53% 22%, 62% 61%, 85% 100%, 0 100%, 43% 75%, 45% 46%);
+    clip-path: polygon(53% 22%, 62% 61%, 85% 100%, 0 100%, 43% 75%, 45% 46%); }
+  80% {
+    -webkit-clip-path: polygon(49% 43%, 56% 83%, 72% 100%, 29% 100%, 42% 90%, 46% 69%);
+    clip-path: polygon(49% 43%, 56% 83%, 72% 100%, 29% 100%, 42% 90%, 46% 69%); }
+  to {
+    -webkit-clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%);
+    clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%); } }
+
+@keyframes d {
+  0% {
+    -webkit-clip-path: polygon(99% 0, 100% 50%, 100% 100%, 0 100%, 0 50%, 0 0);
+    clip-path: polygon(99% 0, 100% 50%, 100% 100%, 0 100%, 0 50%, 0 0); }
+  20% {
+    -webkit-clip-path: polygon(88% 0, 100% 50%, 100% 100%, 0 100%, 0 50%, 29% 6%);
+    clip-path: polygon(88% 0, 100% 50%, 100% 100%, 0 100%, 0 50%, 29% 6%); }
+  40% {
+    -webkit-clip-path: polygon(62% 9%, 75% 48%, 100% 100%, 0 100%, 36% 55%, 43% 24%);
+    clip-path: polygon(62% 9%, 75% 48%, 100% 100%, 0 100%, 36% 55%, 43% 24%); }
+  60% {
+    -webkit-clip-path: polygon(53% 22%, 62% 61%, 85% 100%, 0 100%, 43% 75%, 45% 46%);
+    clip-path: polygon(53% 22%, 62% 61%, 85% 100%, 0 100%, 43% 75%, 45% 46%); }
+  80% {
+    -webkit-clip-path: polygon(49% 43%, 56% 83%, 72% 100%, 29% 100%, 42% 90%, 46% 69%);
+    clip-path: polygon(49% 43%, 56% 83%, 72% 100%, 29% 100%, 42% 90%, 46% 69%); }
+  to {
+    -webkit-clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%);
+    clip-path: polygon(50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%); } }
+
+@-webkit-keyframes e {
+  0% {
+    -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 0);
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 0); }
+  20% {
+    -webkit-clip-path: polygon(32% 4%, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 0);
+    clip-path: polygon(32% 4%, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 0); }
+  40% {
+    -webkit-clip-path: polygon(21% 18%, 100% 50%, 83% 88%, 27% 83%, 0 100%, 0 0);
+    clip-path: polygon(21% 18%, 100% 50%, 83% 88%, 27% 83%, 0 100%, 0 0); }
+  60% {
+    -webkit-clip-path: polygon(12% 32%, 100% 50%, 49% 70%, 11% 71%, 0 85%, 0 0);
+    clip-path: polygon(12% 32%, 100% 50%, 49% 70%, 11% 71%, 0 85%, 0 0); }
+  80% {
+    -webkit-clip-path: polygon(6% 42%, 43% 44%, 20% 59%, 6% 63%, 0 72%, 0 28%);
+    clip-path: polygon(6% 42%, 43% 44%, 20% 59%, 6% 63%, 0 72%, 0 28%); }
+  to {
+    -webkit-clip-path: polygon(0 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
+    clip-path: polygon(0 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%); } }
+
+@keyframes e {
+  0% {
+    -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 0);
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 0); }
+  20% {
+    -webkit-clip-path: polygon(32% 4%, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 0);
+    clip-path: polygon(32% 4%, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 0); }
+  40% {
+    -webkit-clip-path: polygon(21% 18%, 100% 50%, 83% 88%, 27% 83%, 0 100%, 0 0);
+    clip-path: polygon(21% 18%, 100% 50%, 83% 88%, 27% 83%, 0 100%, 0 0); }
+  60% {
+    -webkit-clip-path: polygon(12% 32%, 100% 50%, 49% 70%, 11% 71%, 0 85%, 0 0);
+    clip-path: polygon(12% 32%, 100% 50%, 49% 70%, 11% 71%, 0 85%, 0 0); }
+  80% {
+    -webkit-clip-path: polygon(6% 42%, 43% 44%, 20% 59%, 6% 63%, 0 72%, 0 28%);
+    clip-path: polygon(6% 42%, 43% 44%, 20% 59%, 6% 63%, 0 72%, 0 28%); }
+  to {
+    -webkit-clip-path: polygon(0 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%);
+    clip-path: polygon(0 50%, 0 50%, 0 50%, 0 50%, 0 50%, 0 50%); } }
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  background: #000;
+  padding-left: 5%;
+  padding-top: 40px;
+  padding-right: 180px;
+  padding-bottom: 100px; }
+
+a {
+  color: #fff; }
+  a:hover {
+    color: #3d6eff; }
+
+.about {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10; }
+
+.about__name {
+  font-size: 20px;
+  padding-top: 100px; }
+
+.about__descr {
+  min-width: 350px;
+  max-width: 700px;
+  font-size: 1.5em;
+  font-family: serif;
+  padding-bottom: 350px; }
+
+.links {
+  position: fixed;
+  right: 100px;
+  bottom: 100px; }
+  .links a {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    text-decoration: underline; }
+    .links a:hover {
+      color: #fff; }
+
+.projects-skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 2; }
+
+.projects {
+  width: 40%; }
+  .projects span, .projects a {
+    display: block; }
+  .projects a {
+    margin-bottom: 40px;
+    margin-top: 10px;
+    font-size: 14px; }
+
+.projects__title {
+  margin-bottom: 30px;
+  font-size: 25px; }
+
+.skills {
+  width: 40%; }
+  .skills li {
+    margin-bottom: 20px;
+    position: relative; }
+    .skills li:before {
+      content: "-";
+      position: absolute;
+      top: -2px;
+      left: -20px; }
+
+.skills__title {
+  margin-bottom: 30px;
+  font-size: 25px; }
+
+.crumple {
+  z-index: -10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; }
+
+.crumple:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #0c0c0c; }
+
+@keyframes a {
+  0% {
+    -webkit-clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 0 100%); }
+  20% {
+    -webkit-clip-path: polygon(0 0, 27% 24%, 40% 66%, 100% 50%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 27% 24%, 40% 66%, 100% 50%, 100% 100%, 0 100%); }
+  40% {
+    -webkit-clip-path: polygon(0 16%, 19% 54%, 24% 89%, 64% 67%, 100% 100%, 0 100%);
+    clip-path: polygon(0 16%, 19% 54%, 24% 89%, 64% 67%, 100% 100%, 0 100%); }
+  60% {
+    -webkit-clip-path: polygon(0 47%, 9% 70%, 14% 100%, 44% 89%, 89% 100%, 0 100%);
+    clip-path: polygon(0 47%, 9% 70%, 14% 100%, 44% 89%, 89% 100%, 0 100%); }
+  80% {
+    -webkit-clip-path: polygon(0 61%, 6% 89%, 10% 100%, 27% 95%, 87% 100%, 0 100%);
+    clip-path: polygon(0 61%, 6% 89%, 10% 100%, 27% 95%, 87% 100%, 0 100%); }
+  to {
+    -webkit-clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%);
+    clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%); } }
+
+@media (hover: hover) {
+  .links a:nth-child(odd):hover ~ .crumple {
+    background-color: #3d6eff; }
+  .links a:nth-child(2n):hover ~ .crumple {
+    background-color: #ce0028; }
+  .links__github:hover ~ .crumple:after {
+    -webkit-animation: a 1s .25s linear forwards;
+    animation: a 1s .25s linear forwards; }
+  .links__email:hover ~ .crumple:after {
+    -webkit-animation: b 1s .25s linear forwards;
+    animation: b 1s .25s linear forwards; }
+  .links__fb:hover ~ .crumple:after {
+    -webkit-animation: c 1s .25s linear forwards;
+    animation: c 1s .25s linear forwards; }
+  .links__vk:hover ~ .crumple:after {
+    -webkit-animation: d 1s .25s linear forwards;
+    animation: d 1s .25s linear forwards; }
+  .links__mk:hover ~ .crumple:after {
+    -webkit-animation: e 1s .25s linear forwards;
+    animation: e 1s .25s linear forwards; }
+  .projects a:nth-of-type(odd):hover ~ .crumple {
+    background-color: #3d6eff; }
+  .projects a:nth-of-type(2n):hover ~ .crumple {
+    background-color: #ce0028; }
+  .footer__link--instagram:hover ~ .crumple:after {
+    -webkit-animation: f 1s .25s linear forwards;
+    animation: f 1s .25s linear forwards; } }
+
+@media screen and (max-width: 980px) {
+  .links {
+    position: static;
+    float: right;
+    margin-top: 50px;
+    padding-bottom: 50px; }
+  .projects {
+    width: 60%; } }
+
+@media screen and (max-width: 680px) {
+  body {
+    padding-right: 0;
+    min-width: 350px; }
+  .about {
+    height: 400px; }
+    .about .about__name {
+      margin-bottom: 50px; }
+  .projects {
+    width: 100%; }
+  .projects-skills {
+    display: block; }
+  .skills {
+    width: 100%; }
+    .skills li:before {
+      display: none;
+      font-size: 12px; }
+  .links {
+    float: none; } }
